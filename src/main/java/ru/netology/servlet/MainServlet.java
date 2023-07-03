@@ -22,12 +22,7 @@ public class MainServlet extends HttpServlet {
     public void init() {
         // отдаём список пакетов, в которых нужно искать аннотированные классы
         final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("ru.netology");
-
-        // получаем по имени бина
-        controller = context.getBean(PostController.class); 
-
-        // получаем по классу бина
-        final var service = context.getBean(PostService.class);
+        controller = context.getBean(PostController.class);
     }
 
     @Override
